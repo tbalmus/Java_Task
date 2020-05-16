@@ -4,15 +4,24 @@ public class Cat extends Feline {
 
     private boolean purr;
 
-    public Cat ( int numberOfLimbs , boolean isAware , int averageLiveYears , String sounds , int tailLenght , boolean meows , String popularName , boolean wearsClothes ) {
-    this(numberOfLimbs, isAware, averageLiveYears, sounds, tailLenght, meows, popularName, wearsClothes, false);
+    public Cat ( int numberOfLimbs , boolean isAware , int age , int tailLenght ,
+                 boolean meows , String popularName ) {
+    this(numberOfLimbs, isAware, age, tailLenght, meows, popularName, false);
     }
 
-    public Cat ( int numberOfLimbs , boolean isAware , int averageLiveYears , String sounds , int tailLenght , boolean meows , String popularName , boolean wearsClothes, boolean purr ) {
-        super ( numberOfLimbs , isAware , averageLiveYears , sounds , tailLenght , meows , popularName , wearsClothes );
+    public Cat ( int numberOfLimbs , boolean isAware , int age  , int tailLenght ,
+                 boolean meows , String name , boolean purr ) {
+        super ( numberOfLimbs , isAware , age, tailLenght , meows , name );
         this.purr = purr;
     }
 
-    public void catCanPurr (){
+    public void reactToPlay( Human human, int sec){
+        System.out.println ("Cat "+ this.getName ()+ " reacts to play." );;
+        if (sec >= 5){
+            human.setHumanBitten( true );
+        }
+        else{
+            human.setHumanBitten ( false );
+        }
     }
 }

@@ -5,23 +5,18 @@ public class Feline implements Mammal {
     int numberOfLimbs;
     final int numberOfEars = 2;
     boolean isAware;
-    int averageLiveYears;
-    String sounds;
-    String popularName;
-    boolean wearsClothes;
-
+    int age;
+    String name;
     protected int tailLenght;
     protected boolean meows;
 
-    public Feline ( int numberOfLimbs, boolean isAware , int averageLiveYears , String sounds , int tailLenght , boolean meows , String popularName, boolean wearsClothes) {
+    public Feline ( int numberOfLimbs, boolean isAware , int age , int tailLenght , boolean meows , String name) {
         this.numberOfLimbs = numberOfLimbs;
         this.isAware = isAware;
-        this.averageLiveYears = averageLiveYears;
-        this.sounds = sounds;
+        this.age = age;
         this.tailLenght = tailLenght;
         this.meows = meows;
-        this.popularName = popularName;
-        this.wearsClothes = wearsClothes;
+        this.name = name;
     }
 
 
@@ -41,47 +36,26 @@ public class Feline implements Mammal {
     }
 
     @Override
-    public int getAverageLiveYears () {
-        return this.averageLiveYears;
+    public int getAge () {
+        return this.age;
     }
 
     @Override
-    public String getSound () {
-        return this.sounds;
+    public String getName () {
+        return this.name;
     }
 
-    @Override
-    public boolean wearsClothes () {
-        return this.wearsClothes;
-    }
-
-    @Override
-    public String getPopularName () {
-        return this.popularName;
-    }
 
     public void setNumberOfLimbs ( int numberOfLimbs ) {
         this.numberOfLimbs = numberOfLimbs;
     }
 
-    public void setAware ( boolean aware ) {
-        isAware = aware;
-    }
-
-    public void setAverageLiveYears ( int averageLiveYears ) {
-        this.averageLiveYears = averageLiveYears;
-    }
-
-    public void setSounds ( String sounds ) {
-        this.sounds = sounds;
+    public void setAge ( int age ) {
+        this.age = age;
     }
 
     public void setPopularName ( String popularName ) {
-        this.popularName = popularName;
-    }
-
-    public void setWearsClothes ( boolean wearsClothes ) {
-        this.wearsClothes = wearsClothes;
+        this.name = popularName;
     }
 
     public void setTailLenght ( int tailLenght ) {

@@ -4,29 +4,38 @@ public class Human implements Mammal {
     int numberOfLimbs;
     int numberOfEars;
     boolean isAware;
-    int averageLiveYears;
-    String sounds = "Aaaaaaaa";
-    String popularName;
-    boolean wearsClothes;
+    int age;
+    String name;
+    boolean isHumanBitten;
 
     private double height;
     private boolean talk;
 
     private Human ( double height , boolean talk ) {
-        this(4, 2, true, 80, "Ana", true, height, talk);
+        this(4, 2, true, 17, "Ana", 170, true);
     }
 
-    public Human ( int numberOfLimbs , int numberOfEars , boolean isAware , int averageLiveYears, String popularName , boolean wearsClothes , double height , boolean talk ) {
+    public Human ( int numberOfLimbs , int numberOfEars , boolean isAware ,
+                   int age, String name  , double height , boolean talk ) {
         this.numberOfLimbs = numberOfLimbs;
         this.numberOfEars = numberOfEars;
         this.isAware = isAware;
-        this.averageLiveYears = averageLiveYears;
-        this.popularName = popularName;
-        this.wearsClothes = wearsClothes;
+        this.age = age;
+        this.name = name;
         this.height = height;
         this.talk = talk;
+        this.isHumanBitten = false;
     }
 
+    public void  playWithCat( Cat cat, int sec ){
+        System.out.println ("Human " + this.getName () + " plays with cat " + cat.getName () + " " + sec + " seconds \n");
+        cat.reactToPlay ( this, sec);
+    }
+
+    public void setHumanBitten ( boolean bite){
+        this.isHumanBitten = bite;
+        System.out.println ("Is human " + this.getName () + " bitten " + this.isHumanBitten + "\n");
+    }
 
     @Override
     public int getNumberOfLimbs () {
@@ -44,22 +53,12 @@ public class Human implements Mammal {
     }
 
     @Override
-    public int getAverageLiveYears () {
-        return this.averageLiveYears;
+    public int getAge () {
+        return this.age;
     }
 
     @Override
-    public String getSound () {
-        return this.sounds;
-    }
-
-    @Override
-    public boolean wearsClothes () {
-        return this.wearsClothes;
-    }
-
-    @Override
-    public String getPopularName () {
-        return this.popularName;
+    public String getName () {
+        return this.name;
     }
 }
